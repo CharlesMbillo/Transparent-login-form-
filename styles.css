@@ -1,0 +1,312 @@
+/*Plain Code*/
+/*HTML CSS Result Skip Results Iframe
+body {
+  margin: 0;
+}
+
+.fullscreen-container {
+  background-image: url('https://www.dropbox.com/scl/fi/h8rpjs220906yos05en5g/mountain-wolves.jpeg?rlkey=omnh97cntwh21low438a4uwn3&raw=1');
+  min-height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: hsla(201, 100%, 50%, 0.6);
+  padding: 50px 30px;
+  width: 50%;
+  max-width: 600px;
+}
+
+.login-title {
+  color: white;
+  text-align: center;
+  margin: 0 0 40px;
+  font-size: 2.5em; 
+  font-weight: normal;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  color: white;
+  font-weight: lighter;
+  font-size: 1.2em;
+  margin-bottom: 7px;
+}
+
+.input-group input {
+  background: none;
+  border: none; 
+  outline: none;
+  background-color: hsla(201, 30%, 95%, 0.4);
+  font-size: 1.5em;
+  padding: 10px;
+  border: 1px solid hsl(201, 6%, 20%);
+  border-radius: 5px;
+  color: white; 
+  font-weight: lighter;
+}
+
+.login-button {
+  background: none;
+  border: none;
+  outline: none;  
+  background-color: hsla(201, 100%, 50%, 0.1);
+  padding: 10px 30px; 
+  border-radius: 5px; 
+  border: 1px solid hsl(201, 6%, 20%);
+  color: white;
+  font-size: 1.5em;
+  font-weight: lighter;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.login-button:hover, 
+.login-button:focus {
+  background-color: hsla(201, 50%, 50%, 0.3);
+  border-color: hsl(201, 50%, 50%);
+}*/
+
+/*Style the Background Image
+With the HTML structure ready, let's focus on visuals - starting with the full-screen background image. First, the body element has margins by default, preventing images from stretching edge-to-edge. Remove those margins:*/
+
+body {
+  margin: 0;
+}
+
+/*Next, target the .fullscreen-container class and specify your background image URL:*/
+
+.fullscreen-container {
+  background-image: url('https://www.dropbox.com/scl/fi/h8rpjs220906yos05en5g/mountain-wolves.jpeg?rlkey=omnh97cntwh21low438a4uwn3&raw=1');
+
+}
+/*You can get free beautiful background image on site like unsplash and pexels*/
+  
+/*After setting your background image, make it fill the whole viewport by setting minimum height and width to 100vh and 100vw respectively:*/
+
+.fullscreen-container {
+  min-height: 100vh;
+  width: 100vw;
+} 
+
+/*Now give it background-size and background-position property and set it to cover and center respectively, so that we can have a perfectly scaled, centered look:*/
+
+.fullscreen-container {
+  background-size: cover;
+  background-position: center;
+}
+
+/*Lastly, let's use flexbox to vertically and horizontally center the .login-container inside the .fullscreen-container:*/
+  
+.fullscreen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Styling the Login Box
+Now that the background looks good, we need to make the main login div itself look really nice too. This nested container holds the login form, so we want it to look pretty and see-through.
+
+First, pick a background color that goes well with your background image.
+
+Then use hsla to set your preferred color, because this will actually lets us easily manipulate and adjust how see-through the background color of our login-container:*/
+  
+  .login-container {
+  background-color: hsla(201, 100%, 50%, 0.6);
+/*Something to add, when you make a transparent background you might want to blur the images behind the box, as they can make it harder to read. Try adding this to your login-container class in your CSS.*/
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px 1px #c8c8c854;
+  background-color: #c8c8c87c;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1px solid #e9e9e94f;
+  /*Adding backdrop-filter and -webkit-backdrop-filter along with a boxshadow that contains blur will add some level of "glass" like effect to your div.*/
+}
+
+/*Next, put some space around the inside of the box:*/
+  
+  .login-container {
+  padding: 50px 30px;
+}
+
+/*Now, to make our login-container responsive on any screen, set a percentage width but limit the maximum, just like this:*/
+  
+  .login-container {
+  width: 50%; /* The div will be 50% of the screen width */
+  max-width: 600px; /* But it can't get bigger than 600 pixels wide */
+}
+
+/*Making the Title Look Okay
+Now let's work on the big "Welcome" text at the top that greets people. We want to make some small changes so it really pops out and looks good with the rest of the design.
+
+First, let's make the text white so it shows up nicely against the see-through colored box:*/
+  
+  .login-title {
+  color: white;
+}
+
+/*To make the text centered, we can align it using text-align:*/
+  
+.login-title {
+  text-align: center;
+}
+
+/*By default, the big "Welcome" heading has some space above and below it. Let's remove the space above but keep 40 pixels of space below:*/
+  
+.login-title {
+  margin: 0 0 40px;
+}
+
+/*Lastly, make the letters bigger. But we don't want them too thick or dark, so use a regular font weight instead of bold.*/
+  
+.login-title {
+  font-size: 2.5em; /* 2.5 times bigger than normal text */
+  font-weight: normal; /* Not bold, just regular weight */
+}
+
+/*Making the Email and Password Sections Look Nice
+Right now, the boxes for typing the email and password are side-by-side. But we want them stacked going up and down instead of across.
+
+Let's use flexbox to fix this:*/
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/*This simple code makes the email box go above the password box. Not next to each other anymore.*/
+
+/*Next, add a tiny bit of space between those two boxes:*/
+  
+.input-group {
+  margin-bottom: 20px;
+}
+
+/*This puts a small 20 pixel gap under each box. So there's a little room between the email part and password part.
+
+Adding that tiny gap makes it way clearer where one section stops and the next starts. Awesome!*/
+  
+/*Making the Email and Password Labels Look Cool
+The Email and password labels need to look pretty cool too. We want them to match the see-through colored box style.
+
+First, make the label text white so it shows up nicely:*/
+
+ .input-group label {
+  color: white;
+}
+
+/*Next, make the label text thinner and a bit bigger than normal:*/
+  
+.input-group label {
+  font-weight: lighter;
+  font-size: 1.2em;
+}
+
+/*Lastly, add a tiny 7 pixel gap between the labels and the text boxes below them:*/
+
+.input-group label {  
+  margin-bottom: 7px;
+}
+/*Just those few little changes make the labels look good enough! The white, slightly bigger, thinner text looks super modern. And that tiny gap gives a nice breathe between the labels and boxes.
+
+With the labels looking this slick, the whole form is really coming together nicely. Just the actual text input boxes to style up next!*/
+
+/*Making the Text Boxes Look Awesome
+Right now the boxes for typing your email and password just look boring and plain. Let's spice them up to match the cool see-through vibe!*/
+
+/*First, get rid of all the default browser styles on those boxes:*/
+.input-group input {
+  background: none;
+  border: none; 
+  outline: none;
+}
+/*This clears everything so we can rebuild the styles exactly how we want.*/
+
+/*Next, give the boxes a slightly see-through bluish background color:*/
+.input-group input {
+  background-color: hsla(201, 30%, 95%, 0.4);
+}
+/*The "hsla" part makes a bluey color that's sort of see-through.*/
+
+/*Then make the text inside bigger and give it some nice breathing space:*/
+.input-group input {
+ font-size: 1.5em;
+ padding: 10px;
+}
+
+/*For the border, we'll use a subtle dark blue color with slightly rounded corners:*/
+.input-group input { 
+  border: 1px solid hsl(201, 6%, 20%);
+  border-radius: 5px;
+}
+
+/*Almost done! Let's make the text white and a bit thinner:*/
+.input-group input {
+  color: white; 
+  font-weight: lighter;
+}
+
+/*Lastly, a cool trick - when you click in the box, the border gets a brighter blue:*/
+.input-group input:focus {
+  border-color: hsl(201, 50%, 50%);
+}
+
+/*Boom! Those input boxes look absolutely better now than when we started. The colors, spacing, everything fits the translucent theme perfectly.*/
+  
+/*Making the Login Button Look good
+The login button is the most important part - it's what people click to actually sign in. So we have to make this button look good enough.*/
+
+/*First up, clear out all the default browser button styles:*/
+.login-button {
+  background: none;
+  border: none;
+  outline: none;  
+}
+
+/*Next, we'll give it a slightly see-through bluish background color:*/
+.login-button {
+  background-color: hsla(201, 100%, 50%, 0.1);
+}
+/*That "hsla" color code makes a nice calm blue that's just a bit see-through.*/
+
+/*Then make the button nice and big, with slightly rounded corners:*/
+.login-button {
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+/*To match the text boxes, give it that same subtle dark blue border:*/
+.login-button {
+  border: 1px solid hsl(201, 6%, 20%);
+}
+/*For the text itself, make it bigger, white, and slightly thinner:*/
+.login-button {
+  color: white;
+  font-size: 1.5em;
+  font-weight: lighter;
+}
+/*We'll put a little 20px gap between the button and text boxes too:*/
+.login-button {
+  margin-top: 20px;
+}
+/*Last part - when you hover over the button, it gets a brighter blue background!*/
+.login-button {
+  cursor: pointer;
+}
+
+.login-button:hover, 
+.login-button:focus {
+background-color: hsla(201, 50%, 50%, 0.3); /* Brighter blue bg */
+border-color: hsl(201, 50%, 50%); /* Brighter blue border */
+}
+
+/*If you've been following along, here should be the final outcome of our transparent login form:*/
